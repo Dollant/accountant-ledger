@@ -49,4 +49,8 @@ public class LedgerManager {
         return transactions.stream().filter(Transactions::isDeposit).collect(Collectors.toList());
     }
 
+    public List<Transactions> getPayments() {
+        return transactions.stream().filter(Transactions::isPayment).collect(Collectors.toList());
+    }
+
 }
