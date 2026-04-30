@@ -40,4 +40,13 @@ public class Transactions {
             return null;
         }
     }
+
+    public String toCsvLine() {
+        return String.format("%s|%s|%s|%s|%.2f",
+                date.format(DATE_FMT),
+                time.format(TIME_FMT),
+                description,
+                vendor,
+                amount);
+    }
 }
