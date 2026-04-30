@@ -35,6 +35,6 @@ public class LedgerManager {
     }
 
     public void save(Transactions t) throws IOException {
-
+        transactions.add(0, t);
     }
 }
