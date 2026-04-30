@@ -58,5 +58,9 @@ public class LedgerManager {
         LocalDate start = now.withDayOfMonth(1);
         return filterByDateRange(start, now);
     }
+    public List<Transactions> getPreviousMonth() {
+        LocalDate now = LocalDate.now();
+        LocalDate firstOfPrev = now.minusMonths(1).withDayOfMonth(1);
+    }
 
 }
