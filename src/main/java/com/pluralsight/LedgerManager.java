@@ -95,7 +95,13 @@ public class LedgerManager {
                 .filter(t -> vendor == null || vendor.isBlank()
                         || t.getVendor().toLowerCase().contains(vendor.toLowerCase()))
                 .filter(t -> {
+                    if (amountStr == null || amountStr.isBlank()) return true;
+                    try {
+                        double amt = Double.parseDouble(amountStr);
+                        return t.getAmount() == amt;
+                    } catch (NumberFormatException e) {
 
+                    }
                 }
     }
 }
