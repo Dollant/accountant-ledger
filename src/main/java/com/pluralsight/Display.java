@@ -82,6 +82,20 @@ public class Display {
             System.out.printf("  %-12s  %-5s  %-32s  %-20s  %s%n",
                     "DATE", "TIME", "DESCRIPTION", "VENDOR", "AMOUNT");
             System.out.println("  " + "-".repeat(WIDTH - 2));
+
+            double total = 0;
+            for (Transactions t : list) {
+                String sign = t.isDeposit() ? "+" : "";
+                System.out.printf("  %-12s  %-5s  %-32s  %-20s  %s%.2f%n",
+                        t.getDate(),
+                        t.getTime().toString().substring(0, 5),
+                        cut(t.getDescription(), 32),
+                        cut(t.getVendor(), 20),
+                        sign, t.getAmount());
+                total += t.getAmount();
+            }
+
+            System.out.println("  " + "-".repeat(WIDTH - 2));
         }
     }
 }
