@@ -11,4 +11,7 @@ public class Transactions {
     private String description;
     private String vendor;
     private double amount;
+
+    private static final DateTimeFormatter DATE_FMT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private static final DateTimeFormatter TIME_FMT = DateTimeFormatter.ofPattern("HH:mm:ss");
 }
