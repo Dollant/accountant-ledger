@@ -71,5 +71,10 @@ public class LedgerManager {
         return filterByDateRange(start, now);
     }
 
-
+    public List<Transactions> getPreviousYear() {
+        LocalDate now   = LocalDate.now();
+        LocalDate start = LocalDate.of(now.getYear() - 1, 1, 1);
+        LocalDate end   = LocalDate.of(now.getYear() - 1, 12, 31);
+        return filterByDateRange(start, end);
+    }
 }
