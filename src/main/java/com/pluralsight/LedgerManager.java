@@ -105,4 +105,9 @@ public class LedgerManager {
                 })
                 .collect(Collectors.toList());
     }
+
+    private List<Transactions> filterByDateRange(LocalDate start, LocalDate end) {
+
+    }
+
 }
