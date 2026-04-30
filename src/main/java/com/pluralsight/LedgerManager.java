@@ -61,7 +61,7 @@ public class LedgerManager {
     public List<Transactions> getPreviousMonth() {
         LocalDate now = LocalDate.now();
         LocalDate firstOfPrev = now.minusMonths(1).withDayOfMonth(1);
-        LocalDate lastOfPrev = now.withDayOfMonth(1).minusDays(1);
+        LocalDate lastOfPrev  = now.withDayOfMonth(1).minusDays(1);
         return filterByDateRange(firstOfPrev, lastOfPrev);
     }
 
@@ -83,5 +83,10 @@ public class LedgerManager {
         return transactions.stream()
                 .filter(t -> t.getVendor().toLowerCase().contains(q))
                 .collect(Collectors.toList());
+    }
+
+    public List<Transactions> customSearch(LocalDate startDate, LocalDate endDate,
+                                          String description, String vendor, String amountStr) {
+        return transactions.stream()
     }
 }
