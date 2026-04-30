@@ -107,7 +107,8 @@ public class LedgerManager {
     }
 
     private List<Transactions> filterByDateRange(LocalDate start, LocalDate end) {
-
+        return transactions.stream()
+                .filter(t -> !t.getDate().isBefore(start) && !t.getDate().isAfter(end))
+                .collect(Collectors.toList());
     }
-
 }
