@@ -36,5 +36,10 @@ public class LedgerManager {
 
     public void save(Transactions t) throws IOException {
         transactions.add(0, t);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(CSV_FILE, true))) {
+            writer.write(t.toCsvLine());
+            writer.newLine();
+        }
     }
 }
