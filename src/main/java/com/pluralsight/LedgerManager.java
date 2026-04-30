@@ -44,4 +44,9 @@ public class LedgerManager {
     }
 
     public List<Transactions> getAll() { return Collections.unmodifiableList(transactions); }
+
+    public List<Transactions> getDeposits() {
+        return transactions.stream().filter(Transactions::isDeposit).collect(Collectors.toList());
+    }
+
 }
