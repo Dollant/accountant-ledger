@@ -36,5 +36,21 @@ public class Display {
         System.out.print("  > Enter command: ");
     }
 
+    public static void showLedgerMenu() {
+        showSplash();
+        System.out.println(DOUBLE_DIV);
+        System.out.println("  ♡ LEDGER VAULT ♡");
+        System.out.println(DOUBLE_DIV);
+        System.out.println();
+        System.out.println("  [A]  All Entries        -- Full transaction history");
+        System.out.println("  [D]  Deposits Only      -- Incoming gold only");
+        System.out.println("  [P]  Payments Only      -- Outgoing gold only");
+        System.out.println("  [R]  Reports            -- Run pre-defined reports");
+        System.out.println("  [H]  Home               -- Return to main hub");
+        System.out.println();
+        System.out.println(DIVIDER);
+        System.out.print("  > Enter command: ");
+    }
+
 
 }
