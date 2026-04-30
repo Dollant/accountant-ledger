@@ -23,4 +23,7 @@ public class Transactions {
         this.amount = amount;
     }
 
+    public static Transactions fromCsvLine(String line) {
+
+    }
 }
