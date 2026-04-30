@@ -75,7 +75,11 @@ public class Display {
         System.out.println(DIVIDER);
         System.out.println("  " + title);
         System.out.println(DIVIDER);
+
+        if (list.isEmpty()) {
+            System.out.println("  No entries found in this range. </3");
+        } else {
+
+        }
     }
-
-
 }
