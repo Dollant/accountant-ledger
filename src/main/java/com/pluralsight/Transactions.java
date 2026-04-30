@@ -49,4 +49,9 @@ public class Transactions {
                 vendor,
                 amount);
     }
+
+    public boolean isDeposit() { return amount >0; }
+    public boolean isPayment() { return amount < 0; }
+
+
 }
