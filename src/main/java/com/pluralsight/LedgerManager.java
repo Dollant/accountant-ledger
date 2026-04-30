@@ -14,7 +14,10 @@ public class LedgerManager {
 
     public void load() throws IOException {
         Path path = Path.of(CSV_FILE);
+
+        if (!Files.exists(path)) {
+            Files.writeString(path, CSV_HEADER + System.lineSeparator());
+            return;
+        }
     }
-
-
 }
