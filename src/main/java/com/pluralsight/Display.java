@@ -113,4 +113,8 @@ public class Display {
         System.out.println();
         pressEnterToContinue();
     }
+
+    public static void error(String msg) {
+        System.out.println("  [ERROR] " + msg);
+    }
 }
