@@ -27,5 +27,11 @@ public class LedgerManager {
             // fix: skip null results from malformed lines instead of adding them to the list
             if (t != null) transactions.add(t);
         }
+
+        transactions.sort(Comparator
+                .comparing(Transactions::getDate)
+                .thenComparing(Transactions::getTime)
+                .reversed());
     }
+
 }
