@@ -36,6 +36,8 @@ public class Transactions {
             String vendor = parts[3].trim();
             double amount = Double.parseDouble(parts[4].trim());
             return new Transactions(date, time, desc, vendor, amount);
+        } catch (Exception e) {
+            return null;
         }
     }
 }
