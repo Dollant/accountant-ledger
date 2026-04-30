@@ -122,4 +122,9 @@ public class Display {
         System.out.println("  " + msg);
     }
 
+    public static void sectionHeader(String msg) {
+        System.out.println();
+        System.out.println("  -- " + msg + " --");
+        System.out.println();
+    }
 }
