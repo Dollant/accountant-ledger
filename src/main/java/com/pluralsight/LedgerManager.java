@@ -88,5 +88,14 @@ public class LedgerManager {
     public List<Transactions> customSearch(LocalDate startDate, LocalDate endDate,
                                           String description, String vendor, String amountStr) {
         return transactions.stream()
+                .filter(t -> startDate == null || !t.getDate().isBefore(startDate))
+                .filter(t -> endDate == null || !t.getDate().isAfter(endDate))
+                .filter(t -> description == null || description.isBlank()
+                        || t.getDescription().toLowerCase().contains(description.toLowerCase()))
+                .filter(t -> vendor == null || vendor.isBlank()
+                        || t.getVendor().toLowerCase().contains(vendor.toLowerCase()))
+                .filter(t -> {
+
+                }
     }
 }
