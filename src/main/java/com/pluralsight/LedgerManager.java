@@ -65,4 +65,11 @@ public class LedgerManager {
         return filterByDateRange(firstOfPrev, lastOfPrev);
     }
 
+    public List<Transactions> getYearToDate() {
+        LocalDate now   = LocalDate.now();
+        LocalDate start = now.withDayOfYear(1);
+        return filterByDateRange(start, now);
+    }
+
+
 }
