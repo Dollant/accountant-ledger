@@ -79,7 +79,9 @@ public class Display {
         if (list.isEmpty()) {
             System.out.println("  No entries found in this range. </3");
         } else {
-
+            System.out.printf("  %-12s  %-5s  %-32s  %-20s  %s%n",
+                    "DATE", "TIME", "DESCRIPTION", "VENDOR", "AMOUNT");
+            System.out.println("  " + "-".repeat(WIDTH - 2));
         }
     }
 }
