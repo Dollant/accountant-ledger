@@ -77,4 +77,11 @@ public class LedgerManager {
         LocalDate end   = LocalDate.of(now.getYear() - 1, 12, 31);
         return filterByDateRange(start, end);
     }
+
+    public List<Transactions> getByVendor(String vendorQuery) {
+        String q = vendorQuery.toLowerCase().trim();
+        return transactions.stream()
+                .filter(t -> t.getVendor().toLowerCase().contains(q))
+                .collect(Collectors.toList());
+    }
 }
