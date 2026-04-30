@@ -26,5 +26,7 @@ public class Transactions {
     public static Transactions fromCsvLine(String line) {
         if (line == null || line.isBlank()) return null;
         String[] parts = line.split("\\|");
+
+        if (parts.length != 5) return null;
     }
 }
