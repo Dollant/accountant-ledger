@@ -34,4 +34,7 @@ public class LedgerManager {
                 .reversed());
     }
 
+    public void save(Transactions t) throws IOException {
+
+    }
 }
