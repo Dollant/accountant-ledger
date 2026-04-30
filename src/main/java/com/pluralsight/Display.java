@@ -106,4 +106,11 @@ public class Display {
     public static void prompt(String label) {
         System.out.print("  > " + label + ": ");
     }
+
+    public static void success(String msg) {
+        System.out.println();
+        System.out.println("  [OK] " + msg);
+        System.out.println();
+        pressEnterToContinue();
+    }
 }
