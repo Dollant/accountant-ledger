@@ -96,6 +96,7 @@ public class Display {
             }
 
             System.out.println("  " + "-".repeat(WIDTH - 2));
+            System.out.printf("  %-69s%+.2f%n", "NET BALANCE:", total);
         }
     }
 }
