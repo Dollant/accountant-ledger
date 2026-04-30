@@ -42,4 +42,6 @@ public class LedgerManager {
             writer.newLine();
         }
     }
+
+    public List<Transactions> getAll() { return Collections.unmodifiableList(transactions); }
 }
