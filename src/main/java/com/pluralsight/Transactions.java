@@ -61,6 +61,15 @@ public class Transactions {
 
     @Override
     public String toString() {
-
+        String sign = amount >= 0 ? "+" : "";
+        return String.format("  %-12s  %-8s  %-32s  %-20s  %s%.2f",
+                date.format(DATE_FMT),
+                time.format(DateTimeFormatter.ofPattern("HH:mm")),
+                cut(description, 32),
+                cut(vendor, 20),
+                sign, amount);
+    }
+    private String cut(String s, int max) {
+        return s.length() > max ? s.substring(0, max - 1) + "..." : s;
     }
 }
