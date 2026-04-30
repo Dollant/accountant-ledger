@@ -5,4 +5,10 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class Transactions {
+
+    private LocalDate date;
+    private LocalTime time;
+    private String description;
+    private String vendor;
+    private double amount;
 }
