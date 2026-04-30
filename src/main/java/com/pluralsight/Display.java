@@ -70,5 +70,12 @@ public class Display {
         System.out.print("  > Enter command: ");
     }
 
+    public static void showTransactions(List<Transactions> list, String title) {
+        System.out.println();
+        System.out.println(DIVIDER);
+        System.out.println("  " + title);
+        System.out.println(DIVIDER);
+    }
+
 
 }
