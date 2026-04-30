@@ -53,4 +53,10 @@ public class LedgerManager {
         return transactions.stream().filter(Transactions::isPayment).collect(Collectors.toList());
     }
 
+    public List<Transactions> getMonthToDate() {
+        LocalDate now   = LocalDate.now();
+        LocalDate start = now.withDayOfMonth(1);
+        return filterByDateRange(start, now);
+    }
+
 }
