@@ -28,5 +28,14 @@ public class Transactions {
         String[] parts = line.split("\\|");
 
         if (parts.length != 5) return null;
+
+        try {
+            LocalDate date = LocalDate.parse(parts[0].trim(), DATE_FMT);
+            LocalTime time = LocalTime.parse(parts[1].trim(), TIME_FMT);
+            String desc = parts[2].trim();
+            String vendor = parts[3].trim();
+            double amount = Double.parseDouble(parts[4].trim());
+            return new Transactions(date, time, desc, vendor, amount);
+        }
     }
 }
