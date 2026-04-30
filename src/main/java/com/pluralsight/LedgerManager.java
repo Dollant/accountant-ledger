@@ -100,8 +100,9 @@ public class LedgerManager {
                         double amt = Double.parseDouble(amountStr);
                         return t.getAmount() == amt;
                     } catch (NumberFormatException e) {
-
+                        return true;
                     }
-                }
+                })
+                .collect(Collectors.toList());
     }
 }
