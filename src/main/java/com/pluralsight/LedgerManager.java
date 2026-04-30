@@ -22,5 +22,10 @@ public class LedgerManager {
 
         transactions.clear();
         List<String> lines = Files.readAllLines(path);
+        for (int i = 1; i < lines.size(); i++) {
+            Transactions t = Transactions.fromCsvLine(lines.get(i));
+            // fix: skip null results from malformed lines instead of adding them to the list
+            if (t != null) transactions.add(t);
+        }
     }
 }
