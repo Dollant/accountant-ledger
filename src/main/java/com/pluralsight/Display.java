@@ -52,5 +52,23 @@ public class Display {
         System.out.print("  > Enter command: ");
     }
 
+    public static void showReportsMenu() {
+        showSplash();
+        System.out.println(DOUBLE_DIV);
+        System.out.println("  ♡ REPORTS & INTEL ♡");
+        System.out.println(DOUBLE_DIV);
+        System.out.println();
+        System.out.println("  [1]  Month To Date      -- This month's activity");
+        System.out.println("  [2]  Previous Month     -- Last month's log");
+        System.out.println("  [3]  Year To Date       -- This year so far");
+        System.out.println("  [4]  Previous Year      -- Full last year");
+        System.out.println("  [5]  Search by Vendor   -- Filter by merchant");
+        System.out.println("  [6]  Custom Search      -- Multi-field filter");
+        System.out.println("  [0]  Back to Ledger");
+        System.out.println();
+        System.out.println(DIVIDER);
+        System.out.print("  > Enter command: ");
+    }
+
 
 }
