@@ -50,7 +50,7 @@ public class Transactions {
                 amount);
     }
 
-    public boolean isDeposit() { return amount >0; }
+    public boolean isDeposit() { return amount > 0; }
     public boolean isPayment() { return amount < 0; }
 
     public LocalDate  getDate() { return date; }
@@ -58,4 +58,9 @@ public class Transactions {
     public String getDescription() { return description; }
     public String getVendor() { return vendor; }
     public double getAmount() { return amount; }
+
+    @Override
+    public String toString() {
+
+    }
 }
