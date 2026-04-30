@@ -19,5 +19,8 @@ public class LedgerManager {
             Files.writeString(path, CSV_HEADER + System.lineSeparator());
             return;
         }
+
+        transactions.clear();
+        List<String> lines = Files.readAllLines(path);
     }
 }
