@@ -127,4 +127,15 @@ public class Display {
         System.out.println("  -- " + msg + " --");
         System.out.println();
     }
+
+    public static void showGoodbye() {
+        System.out.println();
+        System.out.println("          ⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹⊹₊˚‧︵‿₊‿︵‧˚₊⊹⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹");
+        System.out.println("               |   Session Saved. See you next run,   |");
+        System.out.println("               |          Ledger Master.              |");
+        System.out.println("          ⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹⊹₊˚‧︵‿₊‿︵‧˚₊⊹⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹");
+        System.out.println();
+    }
+
+
 }
