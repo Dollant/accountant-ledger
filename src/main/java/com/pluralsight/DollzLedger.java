@@ -18,4 +18,11 @@ public class DollzLedger {
         return "";
     }
 
+    public static void main(String[] args) {
+        try {
+            ledger.load();
+        } catch (Exception e) {
+
+        }
+    }
 }
