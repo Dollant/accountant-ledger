@@ -165,6 +165,11 @@ public class DollzLedger {
         Display.sectionHeader("VENDOR SEARCH");
         Display.prompt("Enter vendor name (partial match is fine)");
         String query = readLine().trim();
+
+        if (query.isBlank()) {
+            Display.error("No vendor entered -- returning to reports.");
+            return;
+        }
     }
 }
 
