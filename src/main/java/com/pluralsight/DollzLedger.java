@@ -128,7 +128,7 @@ public class DollzLedger {
             String input = readLine().trim().toUpperCase();
 
             switch (input) {
-                case "A" -> Display.showTransactions(ledger.getAll(),      "ALL ENTRIES");
+                case "A" -> Display.showTransactions(ledger.getAll(), "ALL ENTRIES");
                 case "D" -> Display.showTransactions(ledger.getDeposits(), "DEPOSITS");
                 case "P" -> Display.showTransactions(ledger.getPayments(), "PAYMENTS");
                 case "R" -> runReportsScreen();
@@ -140,5 +140,10 @@ public class DollzLedger {
         }
     }
 
+    private static void runReportsScreen() {
+        while (true) {
+            Display.showReportsMenu();
+        }
+    }
 }
 
