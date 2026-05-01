@@ -1,7 +1,6 @@
 package com.pluralsight;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Display {
     private static final int WIDTH = 80;
@@ -100,7 +99,6 @@ public class Display {
         }
 
         System.out.println(DIVIDER);
-        pressEnterToContinue();
     }
 
     public static void prompt(String label) {
@@ -111,7 +109,6 @@ public class Display {
         System.out.println();
         System.out.println("  [OK] " + msg);
         System.out.println();
-        pressEnterToContinue();
     }
 
     public static void error(String msg) {
@@ -137,12 +134,7 @@ public class Display {
         System.out.println();
     }
 
-    public static void pressEnterToContinue() {
-        System.out.print("  Press ENTER to continue...");
-        try (Scanner sc = new Scanner(System.in)) {
-            sc.nextLine();
-        }
-    }
+
 
     private static String cut(String s, int max) {
         return s.length() > max ? s.substring(0, max - 1) + "..." : s;
