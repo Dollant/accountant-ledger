@@ -110,5 +110,15 @@ public class DollzLedger {
                 Display.error("Invalid amount. Enter a number like 49.99");
             }
         }
+
+        if (!isDeposit) amount = -amount;
+
+        Transactions t = new Transactions(date, time, description, vendor, amount);
+        try {
+            ledger.save(t);
+            Display.success("Transaction logged! " + description + " (" + (isDeposit ? "+" : "") + amount + ")");
+        } catch (Exception e) {
+            Display.error("Failed to save: " + e.getMessage());
+        }
     }
 }
