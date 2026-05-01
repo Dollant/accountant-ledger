@@ -137,5 +137,14 @@ public class Display {
         System.out.println();
     }
 
+    public static void pressEnterToContinue() {
+        System.out.print("  Press ENTER to continue...");
+        try (Scanner sc = new Scanner(System.in)) {
+            sc.nextLine();
+        }
+    }
 
+    private static String cut(String s, int max) {
+        return s.length() > max ? s.substring(0, max - 1) + "..." : s;
+    }
 }
