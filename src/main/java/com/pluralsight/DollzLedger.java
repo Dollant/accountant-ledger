@@ -79,5 +79,13 @@ public class DollzLedger {
                 Display.error("Invalid time -- using current time instead.");
             }
         }
+
+        String description = "";
+        while (description.isBlank()) {
+            Display.prompt("Description");
+            description = readLine().trim();
+            if (description.isBlank()) Display.error("Description cannot be empty.");
+        }
+
     }
 }
