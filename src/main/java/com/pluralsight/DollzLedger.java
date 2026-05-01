@@ -24,5 +24,12 @@ public class DollzLedger {
         } catch (Exception e) {
             System.out.println("Could not load transactions.csv: " + e.getMessage());
         }
+
+        Display.showSplash();
+        Display.info("Ledger loaded. " + ledger.getAll().size() + " transaction(s) on record.");
+        System.out.print("  Press ENTER to continue...");
+        readLine();
+
+        runHomeScreen();
     }
 }
