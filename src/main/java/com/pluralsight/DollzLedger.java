@@ -93,5 +93,11 @@ public class DollzLedger {
             vendor = readLine().trim();
             if (vendor.isBlank()) Display.error("Vendor cannot be empty.");
         }
+
+        double amount = 0;
+        boolean validAmount = false;
+        while (!validAmount) {
+            Display.prompt("Amount (numbers only, e.g. 50.00)");
+        }
     }
 }
