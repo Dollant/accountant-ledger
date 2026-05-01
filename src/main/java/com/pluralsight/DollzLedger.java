@@ -156,8 +156,15 @@ public class DollzLedger {
                 case "0" -> {
                     return;
                 }
+                default -> Display.error("Unknown command. Enter 0-6.");
             }
         }
+    }
+
+    private static void searchByVendor() {
+        Display.sectionHeader("VENDOR SEARCH");
+        Display.prompt("Enter vendor name (partial match is fine)");
+        String query = readLine().trim();
     }
 }
 
