@@ -46,7 +46,11 @@ public class DollzLedger {
                     Display.showGoodbye();
                     return;
                 }
+                default -> Display.error("Unknown command. Try D, P, L, or X.");
             }
         }
     }
+    private static void addTransaction(boolean isDeposit) {
+        String kind = isDeposit ? "NEW DEPOSIT" : "NEW PAYMENT";
+        Display.sectionHeader(kind);
 }
