@@ -170,6 +170,12 @@ public class DollzLedger {
             Display.error("No vendor entered -- returning to reports.");
             return;
         }
+
+        List<Transactions> results = ledger.getByVendor(query);
+        Display.showTransactions(results, "VENDOR: \"" + query + "\"");
+    }
+    private static void customSearch() {
+        Display.sectionHeader("CUSTOM SEARCH -- leave any field blank to skip it");
     }
 }
 
