@@ -106,7 +106,7 @@ public class DollzLedger {
                 } else {
                     validAmount = true;
                 }
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 Display.error("Invalid amount. Enter a number like 49.99");
             }
         }
@@ -121,4 +121,22 @@ public class DollzLedger {
             Display.error("Failed to save: " + e.getMessage());
         }
     }
+
+    private static void runLedgerScreen() {
+        while (true) {
+            Display.showLedgerMenu();
+            String input = readLine().trim().toUpperCase();
+
+            switch (input) {
+                case "A" -> Display.showTransactions(ledger.getAll(),      "ALL ENTRIES");
+                case "D" -> Display.showTransactions(ledger.getDeposits(), "DEPOSITS");
+                case "P" -> Display.showTransactions(ledger.getPayments(), "PAYMENTS");
+                case "R" -> runReportsScreen();
+                case "H" -> {
+
+                }
+            }
+        }
+    }
 }
+
