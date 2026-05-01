@@ -32,4 +32,10 @@ public class DollzLedger {
 
         runHomeScreen();
     }
+
+    private static void runHomeScreen() {
+        while (true) {
+            Display.showHomeScreen();
+        }
+    }
 }
