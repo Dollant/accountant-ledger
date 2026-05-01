@@ -9,4 +9,13 @@ import java.util.Scanner;
 
 public class DollzLedger {
 
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final LedgerManager ledger  = new LedgerManager();
+    private static final DateTimeFormatter DATE_FMT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+    private static String readLine() {
+        if (scanner.hasNextLine()) return scanner.nextLine();
+        return "";
+    }
+
 }
