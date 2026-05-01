@@ -66,7 +66,17 @@ public class DollzLedger {
                 } catch (DateTimeParseException e) {
                     Display.error("Invalid date. Use yyyy-MM-dd (e.g. 2024-03-15)");
                 }
-                }
+            }
+        }
+
+        LocalTime time = LocalTime.now().withNano(0);
+        Display.prompt("Time (HH:mm:ss) [leave blank for now -> " + time + "]");
+        String rawTime = readLine().trim();
+        if (!rawTime.isBlank()) {
+            try{
+                time = LocalTime.parse(rawTime, DateTimeFormatter.ofPattern("HH:mm:ss"));
+            } catch (DateTimeParseException e) {
+                Display.error("Invalid time -- using current time instead.");
             }
         }
     }
