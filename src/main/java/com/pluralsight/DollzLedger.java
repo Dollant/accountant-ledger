@@ -64,7 +64,8 @@ public class DollzLedger {
                 try {
                     date = LocalDate.parse(raw, DATE_FMT);
                 } catch (DateTimeParseException e) {
-
+                    Display.error("Invalid date. Use yyyy-MM-dd (e.g. 2024-03-15)");
+                }
                 }
             }
         }
