@@ -98,6 +98,10 @@ public class DollzLedger {
         boolean validAmount = false;
         while (!validAmount) {
             Display.prompt("Amount (numbers only, e.g. 50.00)");
+            String rawAmt = readLine().trim().replace("$", "");
+            try {
+
+            }
         }
     }
 }
