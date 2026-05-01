@@ -100,7 +100,14 @@ public class DollzLedger {
             Display.prompt("Amount (numbers only, e.g. 50.00)");
             String rawAmt = readLine().trim().replace("$", "");
             try {
-
+                amount = Math.abs(Double.parseDouble(rawAmt));
+                if (amount <= 0) {
+                    Display.error("Amount must be greater than zero.");
+                } else {
+                    validAmount = true;
+                }
+            } catch (NumberFormatException e){
+                Display.error("Invalid amount. Enter a number like 49.99");
             }
         }
     }
