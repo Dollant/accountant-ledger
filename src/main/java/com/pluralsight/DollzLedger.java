@@ -133,10 +133,12 @@ public class DollzLedger {
                 case "P" -> Display.showTransactions(ledger.getPayments(), "PAYMENTS");
                 case "R" -> runReportsScreen();
                 case "H" -> {
-
+                    return;
                 }
+                default -> Display.error("Unknown command. Try A, D, P, R, or H.");
             }
         }
     }
+
 }
 
