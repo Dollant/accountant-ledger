@@ -87,5 +87,11 @@ public class DollzLedger {
             if (description.isBlank()) Display.error("Description cannot be empty.");
         }
 
+        String vendor = "";
+        while (vendor.isBlank()) {
+            Display.prompt("Vendor / Merchant");
+            vendor = readLine().trim();
+            if (vendor.isBlank()) Display.error("Vendor cannot be empty.");
+        }
     }
 }
