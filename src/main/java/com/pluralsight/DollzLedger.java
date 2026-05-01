@@ -143,6 +143,20 @@ public class DollzLedger {
     private static void runReportsScreen() {
         while (true) {
             Display.showReportsMenu();
+
+            String input = readLine().trim();
+
+            switch (input) {
+                case "1" -> Display.showTransactions(ledger.getMonthToDate(),   "MONTH TO DATE");
+                case "2" -> Display.showTransactions(ledger.getPreviousMonth(), "PREVIOUS MONTH");
+                case "3" -> Display.showTransactions(ledger.getYearToDate(),    "YEAR TO DATE");
+                case "4" -> Display.showTransactions(ledger.getPreviousYear(),  "PREVIOUS YEAR");
+                case "5" -> searchByVendor();
+                case "6" -> customSearch();
+                case "0" -> {
+                    return;
+                }
+            }
         }
     }
 }
