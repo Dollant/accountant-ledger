@@ -128,14 +128,12 @@ public class DollzLedger {
             String input = readLine().trim().toUpperCase();
 
             switch (input) {
-                case "A" -> Display.showTransactions(ledger.getAll(), "ALL ENTRIES");
-                case "D" -> Display.showTransactions(ledger.getDeposits(), "DEPOSITS");
-                case "P" -> Display.showTransactions(ledger.getPayments(), "PAYMENTS");
+                case "A" -> { Display.showTransactions(ledger.getAll(), "ALL ENTRIES"); readLine(); }
+                case "D" -> { Display.showTransactions(ledger.getDeposits(), "DEPOSITS");    readLine(); }
+                case "P" -> { Display.showTransactions(ledger.getPayments(), "PAYMENTS");    readLine(); }
                 case "R" -> runReportsScreen();
-                case "H" -> {
-                    return;
-                }
-                default -> Display.error("Unknown command. Try A, D, P, R, or H.");
+                case "H" -> { return; }
+                default  -> Display.error("Unknown command. Try A, D, P, R, or H.");
             }
         }
     }
@@ -147,16 +145,14 @@ public class DollzLedger {
             String input = readLine().trim();
 
             switch (input) {
-                case "1" -> Display.showTransactions(ledger.getMonthToDate(),   "MONTH TO DATE");
-                case "2" -> Display.showTransactions(ledger.getPreviousMonth(), "PREVIOUS MONTH");
-                case "3" -> Display.showTransactions(ledger.getYearToDate(),    "YEAR TO DATE");
-                case "4" -> Display.showTransactions(ledger.getPreviousYear(),  "PREVIOUS YEAR");
+                case "1" -> { Display.showTransactions(ledger.getMonthToDate(),   "MONTH TO DATE");  readLine(); }
+                case "2" -> { Display.showTransactions(ledger.getPreviousMonth(), "PREVIOUS MONTH"); readLine(); }
+                case "3" -> { Display.showTransactions(ledger.getYearToDate(),    "YEAR TO DATE");   readLine(); }
+                case "4" -> { Display.showTransactions(ledger.getPreviousYear(),  "PREVIOUS YEAR");  readLine(); }
                 case "5" -> searchByVendor();
                 case "6" -> customSearch();
-                case "0" -> {
-                    return;
-                }
-                default -> Display.error("Unknown command. Enter 0-6.");
+                case "0" -> { return; }
+                default  -> Display.error("Unknown command. Enter 0-6.");
             }
         }
     }
@@ -173,9 +169,40 @@ public class DollzLedger {
 
         List<Transactions> results = ledger.getByVendor(query);
         Display.showTransactions(results, "VENDOR: \"" + query + "\"");
+        readLine();
     }
     private static void customSearch() {
         Display.sectionHeader("CUSTOM SEARCH -- leave any field blank to skip it");
+
+        LocalDate startDate = null;
+        Display.prompt("Start Date (yyyy-MM-dd)");
+        String raw = readLine().trim();
+        if (!raw.isBlank()) {
+            try { startDate = LocalDate.parse(raw, DATE_FMT); }
+            catch (DateTimeParseException e) { Display.error("Invalid date -- skipping."); }
+        }
+
+        LocalDate endDate = null;
+        Display.prompt("End Date (yyyy-MM-dd)");
+        raw = readLine().trim();
+        if (!raw.isBlank()) {
+            try { endDate = LocalDate.parse(raw, DATE_FMT); }
+            catch (DateTimeParseException e) { Display.error("Invalid date -- skipping."); }
+        }
+
+        Display.prompt("Description (partial match)");
+        String description = readLine().trim();
+
+        Display.prompt("Vendor (partial match)");
+        String vendor = readLine().trim();
+
+        Display.prompt("Exact Amount (e.g. -89.99 or 1500.00)");
+        String amountStr = readLine().trim();
+
+        // feat: pass all five values to LedgerManager which handles skipping blank fields internally
+        List<Transactions> results = ledger.customSearch(startDate, endDate, description, vendor, amountStr);
+        Display.showTransactions(results, "CUSTOM SEARCH RESULTS");
+        readLine();
     }
 }
 
