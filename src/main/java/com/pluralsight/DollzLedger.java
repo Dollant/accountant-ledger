@@ -53,4 +53,20 @@ public class DollzLedger {
     private static void addTransaction(boolean isDeposit) {
         String kind = isDeposit ? "NEW DEPOSIT" : "NEW PAYMENT";
         Display.sectionHeader(kind);
+
+        LocalDate date = null;
+        while (date == null) {
+            Display.prompt("Date (yyyy-MM-dd) [leave blank for today]");
+            String raw = readLine().trim();
+            if (raw.isBlank()) {
+                date = LocalDate.now();
+            } else {
+                try {
+                    date = LocalDate.parse(raw, DATE_FMT);
+                } catch (DateTimeParseException e) {
+
+                }
+            }
+        }
+    }
 }
