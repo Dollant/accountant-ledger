@@ -39,11 +39,14 @@ public class DollzLedger {
             String input = readLine().trim().toUpperCase();
 
             switch (input) {
-                case "D" -> addTransaction(true); // true = deposit
+                case "D" -> addTransaction(true);   // true = deposit
                 case "P" -> addTransaction(false);  // false = payment
                 case "L" -> runLedgerScreen();
                 case "X" -> {
                     Display.showGoodbye();
+                    return;
+                }
+            }
         }
     }
 }
