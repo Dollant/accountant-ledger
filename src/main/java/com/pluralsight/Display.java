@@ -11,13 +11,13 @@ public class Display {
     public static void showSplash() {
         System.out.println();
         System.out.println("          ⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹⊹₊˚‧︵‿₊‿︵‧˚₊⊹⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹");
-        System.out.println("          |                                        |");
-        System.out.println("          |       ♡  D O L L Z - L E D G E R  ♡    |");
-        System.out.println("          |         Your Economy. Your Power.      |");
-        System.out.println("          |                                        |");
+        System.out.println("           |                                        |");
+        System.out.println("           |     ♡  D O L L Z - L E D G E R  ♡      |");
+        System.out.println("           |        Your Economy. Your Power.       |");
+        System.out.println("           |                                        |");
         System.out.println("          ⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹⊹₊˚‧︵‿₊‿︵‧˚₊⊹⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹");
         System.out.println();
-        System.out.println("               [ Financial Inventory Tracker v1.0 ]");
+        System.out.println("              [ Financial Inventory Tracker v1.0 ]");
         System.out.println();
     }
 
