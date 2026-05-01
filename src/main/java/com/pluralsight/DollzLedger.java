@@ -36,6 +36,14 @@ public class DollzLedger {
     private static void runHomeScreen() {
         while (true) {
             Display.showHomeScreen();
+            String input = readLine().trim().toUpperCase();
+
+            switch (input) {
+                case "D" -> addTransaction(true); // true = deposit
+                case "P" -> addTransaction(false);  // false = payment
+                case "L" -> runLedgerScreen();
+                case "X" -> {
+                    Display.showGoodbye();
         }
     }
 }
