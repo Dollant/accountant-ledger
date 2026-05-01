@@ -22,7 +22,7 @@ public class DollzLedger {
         try {
             ledger.load();
         } catch (Exception e) {
-
+            System.out.println("Could not load transactions.csv: " + e.getMessage());
         }
     }
 }
